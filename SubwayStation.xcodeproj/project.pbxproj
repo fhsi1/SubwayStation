@@ -16,6 +16,7 @@
 		10573B6D28A0CE0700F17133 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 10573B6C28A0CE0700F17133 /* Alamofire */; };
 		10573B7028A0E31F00F17133 /* StationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10573B6F28A0E31F00F17133 /* StationDetailViewController.swift */; };
 		10573B7228A0EAAC00F17133 /* StationDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10573B7128A0EAAC00F17133 /* StationDetailCollectionViewCell.swift */; };
+		1094966628A22A2C00EC05FC /* StationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1094966528A22A2C00EC05FC /* StationResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		10573B6228A0CDA500F17133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10573B6F28A0E31F00F17133 /* StationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewController.swift; sourceTree = "<group>"; };
 		10573B7128A0EAAC00F17133 /* StationDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		1094966528A22A2C00EC05FC /* StationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				10573B5428A0CDA400F17133 /* AppDelegate.swift */,
 				10573B5628A0CDA400F17133 /* SceneDelegate.swift */,
+				1094966528A22A2C00EC05FC /* StationResponseModel.swift */,
 				10573B6E28A0E2F400F17133 /* Scenes */,
 				10573B5D28A0CDA500F17133 /* Assets.xcassets */,
 				10573B5F28A0CDA500F17133 /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10573B7028A0E31F00F17133 /* StationDetailViewController.swift in Sources */,
+				1094966628A22A2C00EC05FC /* StationResponseModel.swift in Sources */,
 				10573B5928A0CDA400F17133 /* StationSearchViewController.swift in Sources */,
 				10573B5528A0CDA400F17133 /* AppDelegate.swift in Sources */,
 				10573B7228A0EAAC00F17133 /* StationDetailCollectionViewCell.swift in Sources */,
