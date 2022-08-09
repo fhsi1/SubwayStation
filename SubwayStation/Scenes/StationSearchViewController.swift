@@ -99,6 +99,7 @@ extension StationSearchViewController: UISearchBarDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         tableView.isHidden = true
+        stations = [] // reset
     }
     
     // user 의 입력값이 들어올 때 API 통신
