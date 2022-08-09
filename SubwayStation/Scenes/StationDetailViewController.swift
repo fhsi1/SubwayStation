@@ -5,6 +5,7 @@
 //  Created by Yujean Cho on 2022/08/08.
 //
 
+import Alamofire
 import SnapKit
 import UIKit
 
@@ -16,11 +17,6 @@ final class StationDetailViewController: UIViewController {
         return refreshControl
     }()
     
-    // refreshControl 이 실행되었을 때 실행할 method
-    @objc func fetchData() {
-        print("Refresh!")
-        refreshControl.endRefreshing()
-    }
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -53,6 +49,26 @@ final class StationDetailViewController: UIViewController {
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints{ $0.edges.equalToSuperview() }
+        
+        fetchData()
+    }
+    
+    // refreshControl 이 실행되었을 때 실행할 method
+    @objc func fetchData() {
+        
+        let stationName = "서울역"
+        // -역 인 경우 조회되지 않는 경우가 있어 replacingOccurrences 로 처리
+        let urlString = "http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/\(stationName.replacingOccurrences(of: "역", with: ""))"
+        
+        AF
+            .request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
+            .responseDecodable(of: StationArrivalDataResponseModel.self) { [weak self] response in
+                self?.refreshControl.endRefreshing() // 성공하든 실패하든 refreshControl 이 종료될 수 있도록 처리
+                guard case .success(let data) = response.result else { return }
+                
+                print(data.realtimeArrivalList)
+            }
+            .resume()
     }
 }
 
